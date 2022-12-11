@@ -17,7 +17,7 @@ pipeline {
 				}
 			}
     }   
-/*
+
 stage('Build') { 
             steps { 
                withDockerRegistry([credentialsId: "dockerlogin", url: ""]) {
@@ -37,6 +37,7 @@ stage('Build') {
                 }
             }
     	}
+/*
 	stage('Kubernetes Deployment of ASG Bugg Web Application') {
 	   steps {
 	      withKubeConfig([credentialsId: 'kubelogin']) {
