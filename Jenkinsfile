@@ -23,6 +23,7 @@ pipeline {
                withDockerRegistry([credentialsId: "dockerlogin", url: ""]) {
                  script{
                  app =  docker.build("asg")
+	          sh "docker tag asg:latest 467290638204.dkr.ecr.us-west-2.amazonaws.com/asg:latest"
                  }
                }
             }
@@ -32,7 +33,7 @@ pipeline {
             steps {
                 script{
 		    sh "aws ecr get-login-password --region us-west-2 | docker login --username AWS --password-stdin 467290638204.dkr.ecr.us-west-2.amazonaws.com"
-		    sh "docker push 467290638204.dkr.ecr.us-west-2.amazonaws.com/asg:${env.BUILD_NUMBER}"
+		    sh "docker push 467290638204.dkr.ecr.us-west-2.amazonaws.com/asg:latest"
 			
 /*			
                     docker.withRegistry('https://467290638204.dkr.ecr.us-west-2.amazonaws.com', 'ecr:us-west-2:aws-credentials') {
