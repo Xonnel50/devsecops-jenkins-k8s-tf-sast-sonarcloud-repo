@@ -45,7 +45,7 @@ pipeline {
                     }
                 }
             }
-    	
+	}
 
 	stage('Kubernetes Deployment of ASG Bugg Web Application') {
 	   steps {
@@ -59,7 +59,7 @@ pipeline {
 	}
 }
        
-}
+
 	
 	
 	
