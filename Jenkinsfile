@@ -20,7 +20,7 @@ pipeline {
 
       stage('Build') { 
             steps { 
-               withDockerRegistry([credentialsId: "dockerlogin", url: ""]) {
+               withDockerRegistry([credentialsId: "docker", url: ""]) {
                  script{
                  app =  docker.build("asg")
 			 
