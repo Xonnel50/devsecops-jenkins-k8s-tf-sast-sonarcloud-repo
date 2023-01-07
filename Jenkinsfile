@@ -6,7 +6,7 @@ pipeline {
    stages{
     stage('CompileandRunSonarAnalysis') {
             steps {	
-		sh "mvn sonar:sonar -Dsonar.projectKey=maverick -Dsonar.host.url=http://54.90.201.131:9000 -Dsonar.login=76a01a013c055d93f0d88855783ec65ef215babb" 
+		sh "mvn sonar:sonar -Dsonar.projectKey=maverick -Dsonar.host.url=http://54.221.125.157:9000 -Dsonar.login=cb2566a39ad057492e3e84fe5beed34c558c9343" 
 			}
         } 
 
